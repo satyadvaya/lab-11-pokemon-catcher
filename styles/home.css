@@ -1,1 +1,28 @@
 /* add home page styles here */
+
+.pokemon-gallery {
+    display: flex;
+    margin: 25px;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.pokemon-label img {
+    height: 200px;
+    border: 1px solid black;
+    filter: sepia(25%);
+}
+
+.pokemon img:hover {
+    border: 5px solid red;
+    filter: none;
+}
+
+input[type=radio] {
+    display: none;
+}
+
+input[type=radio]:checked + img {
+    border: 5px solid red;
+    filter: none;
+}
