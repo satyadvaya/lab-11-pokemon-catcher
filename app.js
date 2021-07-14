@@ -37,7 +37,7 @@ function renderRandomPokemon() {
     let pokemon2 = pokemon[randomNumber2];
     let pokemon3 = pokemon[randomNumber3];
 
-    // update the shown key for each pokemon showPokemon(<id>)
+    // update the shown key for each pokemon encounterPokemon(<id>)
 
     pokemon1Radio.value = pokemon1.id;
     pokemon1Radio.checked = false;
