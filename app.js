@@ -15,18 +15,19 @@ const catchButton = document.getElementById('catch-button');
 // initialize state
 let totalRounds = 0;
 
-// set event listeners 
-  // get user input
-  // use user input to update state 
-  // update DOM to reflect the new state
-
+// when page loads & anytime the user clicks the button
+    // randomly pick 3 different pokemon
+    // update the "shown" key in results for each pokemon
+    // display the pokemon on the page
 function renderRandomPokemon() {
     totalRounds++;
 
+    // generate three random indices of pokemon array
     let randomNumber1 = Math.floor(Math.random() * pokemon.length);
     let randomNumber2 = Math.floor(Math.random() * pokemon.length);
     let randomNumber3 = Math.floor(Math.random() * pokemon.length);
 
+    // keep generating random numbers until they don't match
     while (randomNumber1 === randomNumber2 || randomNumber1 === randomNumber3 || randomNumber2 === randomNumber3) {
         randomNumber2 = Math.floor(Math.random() * pokemon.length);
         randomNumber3 = Math.floor(Math.random() * pokemon.length);
@@ -35,6 +36,8 @@ function renderRandomPokemon() {
     let pokemon1 = pokemon[randomNumber1];
     let pokemon2 = pokemon[randomNumber2];
     let pokemon3 = pokemon[randomNumber3];
+
+    // update the shown key for each pokemon showPokemon(<id>)
 
     pokemon1Radio.value = pokemon1.id;
     pokemon1Radio.checked = false;
@@ -48,10 +51,11 @@ function renderRandomPokemon() {
     pokemon3Radio.checked = false;
     pokemon3Image.src = pokemon3.url_image;
 }
-
 renderRandomPokemon();
 
 catchButton.addEventListener('click', () => {
+    // get the chosen pokemon id (using the input[type=radio]:checked selector)
+    // update the preferred key on the chosen pokemon pickPokemon(<id>)
     if (totalRounds < 10) {
         renderRandomPokemon();
     } else {
