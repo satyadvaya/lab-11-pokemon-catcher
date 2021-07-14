@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
-import { encounterPokemon } from '../storage-utils.js';
+import { getPokedex, setPokedex, encounterPokemon } from '../storage-utils.js';
 
 const test = QUnit.test;
 
@@ -8,22 +8,21 @@ test('encounterPokemon should create a results object if pokemon not previously 
     //Arrange
     // Set up your arguments and expectations
     localStorage.removeItem('RESULTS');
-    const sampleResult = {
+    const sampleResult = [{
         id: 3,
         shown: 1,
         preferred: 0
-    };
+    }];
     
     //Act 
     // Call the function you're testing and set the result to a const
     encounterPokemon(3);
 
-    const resultsString = localStorage.getItem('RESULTS') || '[]';
-    const results = JSON.parse(resultsString);
+    const results = getPokedex();
 
     //Expect
     // Make assertions about what is expected versus the actual result
-    expect.deepEqual(results[0], sampleResult);
+    expect.deepEqual(results, sampleResult);
 });
 
 test('encounterPokemon should increment results object if pokemon previously shown', (expect) => {
@@ -38,20 +37,19 @@ test('encounterPokemon should increment results object if pokemon previously sho
 
     //Act 
     // Call the function you're testing and set the result to a const
-    localStorage.setItem('RESULTS', JSON.stringify(sampleResults));
+    setPokedex(sampleResults);
 
     encounterPokemon(5);
 
-    const resultsString = localStorage.getItem('RESULTS') || '[]';
-    const results = JSON.parse(resultsString);
+    const results = getPokedex();
 
-    const expected = {
+    const expected = [{
         id: 5,
         shown: 2,
         preferred: 0
-    };
+    }];
 
     //Expect
     // Make assertions about what is expected versus the actual result
-    expect.deepEqual(results[0], expected);
+    expect.deepEqual(results, expected);
 });

@@ -1,6 +1,6 @@
 function findById(items, id) {
     // loop through the items
-    for (const item of items) {
+    for (let item of items) {
         // if item's id is equal to the id parameter
         if (item.id === id) {
             // return the item
@@ -21,7 +21,7 @@ export function setPokedex(resultsArray) {
 
 export function encounterPokemon(id) {
     // get results from localstorage
-    const results = getPokedex;
+    const results = getPokedex();
     
     // get the object with id matching input id
     const pokemon = findById(results, id);
