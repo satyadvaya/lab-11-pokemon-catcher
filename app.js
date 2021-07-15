@@ -64,7 +64,7 @@ catchButton.addEventListener('click', () => {
     capturePokemon(selectedId);
 
     // update the preferred key on the chosen pokemon capturePokemon(<id>)
-    // pokemon.preferred++;
+        // pokemon.preferred++;
 
     if (totalRounds < 10) {
         renderRandomPokemon();
