@@ -59,7 +59,13 @@ renderRandomPokemon();
 
 catchButton.addEventListener('click', () => {
     // get the chosen pokemon id (using the input[type=radio]:checked selector)
-    // update the preferred key on the chosen pokemon pickPokemon(<id>)
+    const selectedPokemon = document.querySelector('input[type=radio]:checked');
+    const selectedId = Number(selectedPokemon.value);
+    capturePokemon(selectedId);
+
+    // update the preferred key on the chosen pokemon capturePokemon(<id>)
+    // pokemon.preferred++;
+
     if (totalRounds < 10) {
         renderRandomPokemon();
     } else {
