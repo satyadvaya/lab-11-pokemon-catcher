@@ -1,3 +1,40 @@
+/* CSS HEX */
+/* * {
+    --sky-blue-crayola: #51e5ffff;
+    --indigo: #440381ff;
+    --magenta-process: #ec368dff;
+    --light-pink: #ffa5a5ff;
+    --unbleached-silk: #ffd6c0ff;
+} */
+h2 {
+    color: var(--sky-blue-crayola);
+}
+
+#results-display {
+    margin-top: 20px;
+}
+
 #results-display img {
     height:50px;
+    margin-right: 10px;
+}
+
+.result {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.result p {
+    margin: 5px;
+}
+
+#shownChart {
+    width: 25%;
+    height: 200px;
+}
+
+#preferredChart {
+    width: 25%;
+    height: 200px;
 }
