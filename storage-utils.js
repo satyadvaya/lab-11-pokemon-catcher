@@ -1,4 +1,4 @@
-function findById(items, id) {
+export function findById(items, id) {
     // loop through the items
     for (let item of items) {
         // if item's id is equal to the id parameter

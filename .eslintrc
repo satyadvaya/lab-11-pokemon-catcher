@@ -13,8 +13,9 @@
     "jest": true,
     "node": true
   },
-  "globals": {
-    "QUnit": false
+"globals": {
+    "QUnit": false,
+    "Chart": true
   },
   "rules": {
     "eqeqeq": ["error", "always"],
